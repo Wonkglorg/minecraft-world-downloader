@@ -20,6 +20,10 @@ public class PlayerEntity implements IMovableEntity {
     PlayerEntity(UUID uuid) {
         this.uuid = uuid;
     }
+    
+    public static PlayerEntity fromUUID(UUID uuid) {
+        return new PlayerEntity(uuid);
+    }
 
     public static PlayerEntity parse(DataTypeProvider provider) {
         PlayerEntity ent = new PlayerEntity(provider.readUUID());
