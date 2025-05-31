@@ -129,8 +129,8 @@ public abstract class Chunk extends ChunkEntities {
 
 
     /**
-     * Read a chunk column. Largely based on: <a href="https://wiki.vg/Protocol">https://wiki.vg/Protocol</a>
-     */
+	 * Read a chunk column. Largely based on: <a href="https://minecraft.wiki/w/Java_Edition_protocol/Packets#Chunk_Data">Chunk Data</a>
+	 */
     public void readChunkColumn(boolean full, BitSet mask, DataTypeProvider dataProvider) {
         // Loop through section Y values, starting from the lowest section that has blocks inside it. Compute the index
         // in the mask by subtracting the minimum chunk packet section, e.g. the lowest Y value we will find in the

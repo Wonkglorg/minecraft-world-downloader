@@ -38,18 +38,22 @@ public class Chunk_1_18 extends Chunk_1_17 {
     }
 
     /**
-     * Parse the chunk data.
-     *
-     * @param dataProvider network input
-     */
+	 * Parse the chunk data.
+     * <br>
+     * Specification:
+	 * <a href="https://minecraft.wiki/w/Java_Edition_protocol/Packets#Chunk_Data">Chunk Data</a>
+	 *
+	 * @param dataProvider network input
+	 */
     @Override
     protected void parse(DataTypeProvider dataProvider) {
         raiseEvent("parse from packet");
 
         parseHeightMaps(dataProvider);
-
+        
+        // https://minecraft.wiki/w/Java_Edition_protocol/Chunk_format#Data_structure
         int size = dataProvider.readVarInt();
-
+        
         try {
             readChunkColumn(dataProvider.ofLength(size));
 
