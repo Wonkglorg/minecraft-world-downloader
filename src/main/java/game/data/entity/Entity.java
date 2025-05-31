@@ -10,7 +10,7 @@ import game.data.WorldManager;
 import game.data.container.Slot;
 import game.data.coordinates.CoordinateDim2D;
 import game.data.dimension.Dimension;
-import game.data.entity.version.EquipmentReader;
+import game.data.entity.equipment.EquipmentReader;
 import packets.DataTypeProvider;
 import se.llbit.nbt.CompoundTag;
 import se.llbit.nbt.DoubleTag;
