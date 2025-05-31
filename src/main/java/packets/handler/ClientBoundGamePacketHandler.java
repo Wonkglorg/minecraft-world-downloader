@@ -68,6 +68,12 @@ public class ClientBoundGamePacketHandler extends PacketHandler {
             entityRegistry.updatePositionAbsolute(provider);
             return true;
         });
+        
+        //renamed in 1.21.2
+        operations.put("EntityPositionSync",provider ->{
+            entityRegistry.updatePositionRelative(provider);
+            return true;
+        });
 
         operations.put("MapItemData", provider -> {
             worldManager.getMapRegistry().readMap(provider);
